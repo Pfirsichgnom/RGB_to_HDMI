@@ -1,0 +1,3 @@
+[submodule "vhdl/src/VGA_Controller"]
+	path = vhdl/src/VGA_Controller
+	url = git@github.com:Pfirsichgnom/VGA_Controller.git
