@@ -9,7 +9,7 @@
 --       CLK_px_i-->|                      |
 --          CLK_i-->|     RGB_TO_HDMI      |--> TMDS_CLK_p_o,TMDS_CLK_n_o
 --          RST_i-->|                      |--> TDMS_p_o,TDMS_n_o
---            R_i-->|                      |--> V_sync_o
+--            R_i-->|                      |
 --            G_i-->|                      |
 --            B_i-->|                      |
 --                   ----------------------
@@ -27,6 +27,19 @@ LIBRARY UNISIM;
 USE UNISIM.VComponents.ALL;
 
 ENTITY RGB_TO_HDMI IS
+	GENERIC (
+			h_visible_area : INTEGER := 800; -- Visible horizontal pixels
+            h_frontporch   : INTEGER := 40; -- Horizontal front porch width
+            h_sync_pulse   : INTEGER := 128; -- Horizontal sync pulse width
+            h_back_porch   : INTEGER := 88; -- Horizontal back porch width
+            h_whole_line   : INTEGER := 1056; -- Total horizontal pixels
+    
+            v_visible_area : INTEGER := 600; -- Visible vertical lines
+            v_frontporch   : INTEGER := 1; -- Vertical front porch height
+            v_sync_pulse   : INTEGER := 4; -- Vertical sync pulse height
+            v_back_porch   : INTEGER := 23; -- Vertical back porch height
+            v_whole_line   : INTEGER := 628 -- Total vertical lines
+		);
 	PORT (
 		CLK_px_i : IN STD_LOGIC;
 		CLK_i : IN STD_LOGIC;
@@ -105,6 +118,19 @@ BEGIN
 	control_s <= vsync_s & hsync_s;
 
 	pixel_timer1 : vga_timing_generator
+	GENERIC MAP (
+			h_visible_area => h_visible_area,
+            h_frontporch   => h_frontporch,
+            h_sync_pulse   => h_sync_pulse,
+            h_back_porch   => h_back_porch,
+            h_whole_line   => h_whole_line,
+    
+            v_visible_area => v_visible_area,
+            v_frontporch   => v_frontporch,
+            v_sync_pulse   => v_sync_pulse,
+            v_back_porch   => v_back_porch,
+            v_whole_line   => v_whole_line
+		);
 	PORT MAP
 	(
 		CLK_i => CLK_i,
