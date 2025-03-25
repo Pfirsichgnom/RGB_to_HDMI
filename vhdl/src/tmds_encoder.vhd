@@ -5,14 +5,14 @@
 -- Project Name: TMDS_ENCODER
 -- 
 --                   ----------------------
---      			|                      |
---          CLK_i-->| 	  TMDS_ENCODER     |
+--                  |                      |
+--          CLK_i-->|     TMDS_ENCODER     |
 --          RST_i-->|                      |--> Data_o
 --   Video_Data_i-->|                      |
---Controll_Data_i-->|    		           |
---			VDE_i-->|					   |
---					|					   |
---					 ----------------------
+--Controll_Data_i-->|                      |
+--          VDE_i-->|                      |
+--                  |                      |
+--                   ----------------------
 --
 -- Revision 1.0 - File Created
 -- Additional Comments:

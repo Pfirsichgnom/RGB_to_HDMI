@@ -28,7 +28,7 @@ USE UNISIM.VComponents.ALL;
 
 ENTITY RGB_TO_HDMI IS
 	GENERIC (
-			h_visible_area : INTEGER := 800; -- Visible horizontal pixels
+		    h_visible_area : INTEGER := 800; -- Visible horizontal pixels
             h_frontporch   : INTEGER := 40; -- Horizontal front porch width
             h_sync_pulse   : INTEGER := 128; -- Horizontal sync pulse width
             h_back_porch   : INTEGER := 88; -- Horizontal back porch width
@@ -68,7 +68,7 @@ ARCHITECTURE Behavioral OF RGB_TO_HDMI IS
 
 	COMPONENT vga_timing_generator IS
 		GENERIC (
-			h_visible_area : INTEGER := 800; -- Visible horizontal pixels
+            h_visible_area : INTEGER := 800; -- Visible horizontal pixels
             h_frontporch   : INTEGER := 40; -- Horizontal front porch width
             h_sync_pulse   : INTEGER := 128; -- Horizontal sync pulse width
             h_back_porch   : INTEGER := 88; -- Horizontal back porch width
@@ -119,7 +119,7 @@ BEGIN
 
 	pixel_timer1 : vga_timing_generator
 	GENERIC MAP (
-			h_visible_area => h_visible_area,
+            h_visible_area => h_visible_area,
             h_frontporch   => h_frontporch,
             h_sync_pulse   => h_sync_pulse,
             h_back_porch   => h_back_porch,

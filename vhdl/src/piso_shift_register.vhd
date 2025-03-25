@@ -6,11 +6,11 @@
 -- Description: A parallel in serial out shift register with variable register length.
 -- 
 --                   ----------------------
---      			|                      |
+--                  |                      |
 --          CLK_i-->| piso_shift_register  |
 --          RST_i-->|                      |--> SData_o
 --        PData_i-->|                      |
---            		|                      |
+--                  |                      |
 --                   ----------------------
 -- 
 -- Revision 1.0 - File Created

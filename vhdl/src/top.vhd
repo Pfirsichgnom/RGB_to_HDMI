@@ -10,7 +10,7 @@
 --            R_i-->|         TOP          |--> TDMS_p_o,TDMS_n_o
 --            G_i-->|                      |
 --            B_i-->|                      |
---            		|                      |
+--                  |                      |
 --                   ----------------------
 -- 
 -- Revision 1.0 - File Created
